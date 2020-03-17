@@ -23,7 +23,7 @@ export const LoginScreen = ({navigation}) => {
         },[])
     )
     return (
-        <KeyboardAvoidingView style={styles.container} behavior='height' keyboardVerticalOffset={80} enabled>
+        <KeyboardAvoidingView style={styles.container} behavior='padding' keyboardVerticalOffset={90} enabled>
             <View style={styles.welcomeTextContainer}>
                 <Text style={styles.welcomeTextHeader}>Welcome to my app!</Text>
                 <Text style={styles.welcomeText}>   "Lorem ipsum dolor sit amet, 

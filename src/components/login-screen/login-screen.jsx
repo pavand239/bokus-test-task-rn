@@ -10,6 +10,7 @@ import {
 import {useDispatch} from "react-redux";
 import { useFocusEffect } from '@react-navigation/native'
 import {userLogin} from "../../actions"
+import { ScrollView } from 'react-native-gesture-handler';
 
 export const LoginScreen = ({navigation}) => {
     let [login, setLogin] = useState(''),
@@ -23,7 +24,7 @@ export const LoginScreen = ({navigation}) => {
         },[])
     )
     return (
-        <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+        <KeyboardAvoidingView style={styles.container} behavior='height' keyboardVerticalOffset={80} enabled>
             <View style={styles.welcomeTextContainer}>
                 <Text style={styles.welcomeTextHeader}>Welcome to my app!</Text>
                 <Text style={styles.welcomeText}>   "Lorem ipsum dolor sit amet, 
@@ -35,7 +36,7 @@ export const LoginScreen = ({navigation}) => {
                 </Text>
             </View>
             <View style={styles.loginFormContainer}>
-                <Text style={styles.textError}>{loginError}</Text>
+                {loginError?<Text style={styles.textError}>{loginError}</Text>:null}
                 <TextInput 
                     style={styles.loginForm}
                     placeholder={'Логин'}
@@ -65,8 +66,8 @@ export const LoginScreen = ({navigation}) => {
                     <Text style={styles.loginFormButtonText}>Войти</Text>
                 </TouchableOpacity>
             </View>
-            <View style={{height:100}} />
         </KeyboardAvoidingView>
+        
     )
 }
 
@@ -92,13 +93,13 @@ const styles = StyleSheet.create({
     },
     loginFormContainer:{
         flex:1,
-
     },
     loginForm:{
         height:40,
         borderColor:'lightgrey',
         borderBottomWidth:1,
-        marginBottom:10
+        marginBottom:10,
+        paddingHorizontal:10
     },
     loginFormButton:{
         backgroundColor: 'red',

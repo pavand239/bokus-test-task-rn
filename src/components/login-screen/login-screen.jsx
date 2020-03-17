@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import { 
     StyleSheet, 
     Text, 
@@ -8,12 +8,20 @@ import {
     TouchableOpacity
 } from 'react-native';
 import {useDispatch} from "react-redux";
+import { useFocusEffect } from '@react-navigation/native'
 import {userLogin} from "../../actions"
 
 export const LoginScreen = ({navigation}) => {
     let [login, setLogin] = useState(''),
         [password, setPassword] = useState(''),
+        [loginError, setLoginError] = useState(null),
         dispatch = useDispatch();
+    useFocusEffect(
+        useCallback(()=>{
+            setLogin('');
+            setPassword('');
+        },[])
+    )
     return (
         <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
             <View style={styles.welcomeTextContainer}>
@@ -27,6 +35,7 @@ export const LoginScreen = ({navigation}) => {
                 </Text>
             </View>
             <View style={styles.loginFormContainer}>
+                <Text style={styles.textError}>{loginError}</Text>
                 <TextInput 
                     style={styles.loginForm}
                     placeholder={'Логин'}
@@ -34,6 +43,7 @@ export const LoginScreen = ({navigation}) => {
                     value={login} 
                 />
                 <TextInput 
+                    secureTextEntry
                     style={styles.loginForm}
                     placeholder={'Пароль'}
                     onChangeText={(text)=>setPassword(text)}
@@ -42,8 +52,14 @@ export const LoginScreen = ({navigation}) => {
                 <TouchableOpacity 
                     style={styles.loginFormButton}
                     onPress={()=>{
-                        dispatch(userLogin(login));
-                        navigation.navigate('List');
+                        if (password === '' || login === ''){
+                            setLoginError('Введите имя пользователя/пароль');
+                        } else {
+                            setLoginError(null)
+                            dispatch(userLogin(login));
+                            navigation.navigate('List');
+                        }
+                        
                     }}
                 >
                     <Text style={styles.loginFormButtonText}>Войти</Text>
@@ -95,5 +111,8 @@ const styles = StyleSheet.create({
         color:'white',
         fontWeight:'bold',
         
+    },
+    textError:{
+        color:'red'
     }
   });

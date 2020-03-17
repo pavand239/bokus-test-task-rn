@@ -10,15 +10,12 @@ import DataServiceContext from "./src/components/data-service-context"
 import LoginScreen from "./src/components/login-screen";
 import ListScreen from "./src/components/list-screen"
 import ElementScreen from "./src/components/element-screen";
+import Username from "./src/components/username"
 
 
 const Stack = createStackNavigator();
 const dataService = new DataService();
 
-const Username = ({style={}}) => {
-  let username = useSelector(state=>state.username)
-  return <Text style={style}>{username}</Text>
-}
 
 export default function App() {
   return (
@@ -44,7 +41,7 @@ export default function App() {
                 title:'Список',
                 headerTitleStyle:{...styles.headerTitle},
                 headerRight:()=>(
-                  <Username style={{...styles.headerTitle, ...styles.headerUsername}} />
+                  <Username textStyle={{...styles.headerTitle}} viewStyle={{margin:10}} />
                 ),
                 headerLeft:()=>{},
                 headerStyle: {
@@ -59,7 +56,7 @@ export default function App() {
                 title:'Элемент',
                 headerTitleStyle:{...styles.headerTitle},
                 headerRight:()=>(
-                  <Username style={{...styles.headerTitle, ...styles.headerUsername}} />
+                  <Username textStyle={{...styles.headerTitle}} viewStyle={{margin:15}} />
                 ),
                 headerStyle: {
                   backgroundColor: 'red'
@@ -90,7 +87,4 @@ const styles = StyleSheet.create({
     fontSize:14,
     fontWeight:'bold',
   },
-  headerUsername:{
-    marginRight:20
-  }
 });

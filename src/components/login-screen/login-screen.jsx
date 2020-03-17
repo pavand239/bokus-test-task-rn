@@ -4,12 +4,13 @@ import {
     Text, 
     View,  
     KeyboardAvoidingView,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView
 } from 'react-native';
 import {useDispatch} from "react-redux";
-import { useFocusEffect } from '@react-navigation/native'
-import {userLogin} from "../../actions"
-import FloatingLabelTextInput from '../floating-label-text-input'
+import { useFocusEffect } from '@react-navigation/native';
+import {userLogin} from "../../actions";
+import FloatingLabelTextInput from '../floating-label-text-input';
 
 export const LoginScreen = ({navigation}) => {
     let [login, setLogin] = useState(''),
@@ -23,7 +24,8 @@ export const LoginScreen = ({navigation}) => {
         },[])
     )
     return (
-        <KeyboardAvoidingView style={styles.container} behavior='padding' keyboardVerticalOffset={90} enabled>
+        <KeyboardAvoidingView  style={styles.container}   enabled>
+            <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.welcomeTextContainer}>
                 <Text style={styles.welcomeTextHeader}>Welcome to my app!</Text>
                 <Text style={styles.welcomeText}>   "Lorem ipsum dolor sit amet, 
@@ -65,6 +67,7 @@ export const LoginScreen = ({navigation}) => {
                     <Text style={styles.loginFormButtonText}>Войти</Text>
                 </TouchableOpacity>
             </View>
+            </ScrollView>
         </KeyboardAvoidingView>
         
     )
@@ -72,13 +75,13 @@ export const LoginScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-      flex:1 ,
+      flexGrow:1 ,
       backgroundColor: '#fff',
-      alignSelf:'stretch',
-      padding:15
+      justifyContent:'center',
+      padding:15,
     },
     welcomeTextContainer:{
-        flex:2,
+        flex:2
     },
     welcomeTextHeader:{
         fontSize:32,
@@ -91,13 +94,13 @@ const styles = StyleSheet.create({
         textAlign:"center"
     },
     loginFormContainer:{
-        flex:1,
+        flexGrow:1,
     },
     loginForm:{
         height:40,
         borderColor:'lightgrey',
         borderBottomWidth:1,
-        marginBottom:10,
+        margin:10,
         paddingHorizontal:10
     },
     loginFormButton:{

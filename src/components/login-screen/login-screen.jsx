@@ -2,15 +2,14 @@ import React, {useState, useCallback} from 'react';
 import { 
     StyleSheet, 
     Text, 
-    View, 
-    TextInput,  
+    View,  
     KeyboardAvoidingView,
     TouchableOpacity
 } from 'react-native';
 import {useDispatch} from "react-redux";
 import { useFocusEffect } from '@react-navigation/native'
 import {userLogin} from "../../actions"
-import { ScrollView } from 'react-native-gesture-handler';
+import FloatingLabelTextInput from '../floating-label-text-input'
 
 export const LoginScreen = ({navigation}) => {
     let [login, setLogin] = useState(''),
@@ -37,16 +36,16 @@ export const LoginScreen = ({navigation}) => {
             </View>
             <View style={styles.loginFormContainer}>
                 {loginError?<Text style={styles.textError}>{loginError}</Text>:null}
-                <TextInput 
+                <FloatingLabelTextInput 
                     style={styles.loginForm}
-                    placeholder={'Логин'}
+                    label={'Логин'}
                     onChangeText={(text)=>setLogin(text)}
                     value={login} 
                 />
-                <TextInput 
+                <FloatingLabelTextInput 
                     secureTextEntry
                     style={styles.loginForm}
-                    placeholder={'Пароль'}
+                    label={'Пароль'}
                     onChangeText={(text)=>setPassword(text)}
                     value={password} 
                 />

@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text} from 'react-native';
+import { StyleSheet, StatusBar} from 'react-native';
 import {NavigationContainer} from "@react-navigation/native";
 import {Provider, useSelector} from "react-redux";
 import {store} from "./src/store";
@@ -22,7 +22,9 @@ export default function App() {
     <DataServiceContext.Provider value={dataService}>
       <Provider store={store}>
         <NavigationContainer>
+        <StatusBar backgroundColor='red' />
           <Stack.Navigator>
+            
             <Stack.Screen 
               name='Login'
               component={LoginScreen}

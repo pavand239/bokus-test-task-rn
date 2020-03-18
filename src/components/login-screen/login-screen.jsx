@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
       flexGrow:1 ,
       backgroundColor: '#fff',
       justifyContent:'center',
-      padding:15,
+      paddingHorizontal:10
     },
     welcomeTextContainer:{
         flex:2
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
         fontSize:32,
         fontWeight:'bold',
         textAlign:"center",
+        color:'red',
         paddingBottom:30
     },
     welcomeText:{
@@ -106,8 +107,9 @@ const styles = StyleSheet.create({
     loginFormButton:{
         backgroundColor: 'red',
         alignItems:'center',
+        borderRadius:10,
         padding:10,
-        width:200,
+        width:250,
         alignSelf:'center'
     },
     loginFormButtonText:{

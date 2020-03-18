@@ -23,6 +23,8 @@ export const ListScreen = ({navigation}) => {
                 renderItem = {
                     ({item})=>(
                         <ListItem 
+                            containerStyle={styles.listItem}
+                            textStyle={styles.listItemTitle}
                             title={item.title} 
                             onSelect={()=>{console.log(item.id);navigation.navigate('Element', {id:item.id})}} />
                     )
@@ -33,9 +35,20 @@ export const ListScreen = ({navigation}) => {
 }
 const styles = StyleSheet.create({
     container: {
-      flexGrow:1 ,
-      justifyContent:'center',
-      paddingHorizontal:10,
-      backgroundColor:'white'
+        flexGrow:1 ,
+        justifyContent:'center',
+        paddingHorizontal:10,
+        backgroundColor:'white'
+    },
+    listItem:{
+        borderWidth:1,
+        borderColor:'lightgrey',
+        margin:10,
+        paddingVertical:20,
+        paddingHorizontal:10
+    },
+    listItemTitle:{
+        fontWeight:'bold',
+        color:'black'
     }
 });

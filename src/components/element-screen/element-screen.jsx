@@ -52,16 +52,16 @@ const styles = StyleSheet.create({
         padding:11,
         flex:1,
         borderWidth:1,
-        borderColor:'darkred' 
+        borderColor:'#bb0d02' 
     },
     backButtonText:{
-        color:'darkred',
+        color:'#bb0d02',
         textAlign:'center'
     },
     logoutButton: {
         padding:12,
         flex:1,
-        backgroundColor:'darkred'
+        backgroundColor:'#bb0d02'
     },
     logoutButtonText:{
         color:'white',
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize:18,
         fontWeight:'bold',
-        margin:5
+        margin:5,
+        color:'black'
     },
     description:{
         fontSize:14

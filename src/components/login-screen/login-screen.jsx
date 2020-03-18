@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         fontSize:32,
         fontWeight:'bold',
         textAlign:"center",
-        color:'darkred',
+        color:'#bb0d02',
         paddingBottom:30
     },
     welcomeText:{
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:10
     },
     loginFormButton:{
-        backgroundColor: 'darkred',
+        backgroundColor: '#bb0d02',
         alignItems:'center',
         borderRadius:10,
         padding:10,
@@ -118,6 +118,6 @@ const styles = StyleSheet.create({
         
     },
     textError:{
-        color:'darkred'
+        color:'#bb0d02'
     }
   });

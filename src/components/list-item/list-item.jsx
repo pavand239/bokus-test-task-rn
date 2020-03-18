@@ -1,25 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { Text, TouchableOpacity} from 'react-native';
 
-export const ListItem = ({title, onSelect}) => (
+export const ListItem = ({textStyle={}, containerStyle={}, title, onSelect}) => (
     <TouchableOpacity 
         onPress={()=>onSelect()}
-        style={styles.listItem}>
+        style={containerStyle}>
         <Text 
-            style={styles.listItemTitle}>
+            style={textStyle}>
             {title}
         </Text>
     </TouchableOpacity>
 )
-const styles = StyleSheet.create({
-    listItem:{
-        borderWidth:1,
-        borderColor:'lightgrey',
-        margin:10,
-        paddingVertical:20,
-        paddingHorizontal:10
-    },
-    listItemTitle:{
-        fontWeight:'bold'
-    }
-})

@@ -22,7 +22,7 @@ export default function App() {
     <DataServiceContext.Provider value={dataService}>
       <Provider store={store}>
         <NavigationContainer>
-        <StatusBar backgroundColor='darkred' />
+        <StatusBar backgroundColor='#bb0d02' />
           <Stack.Navigator>
             
             <Stack.Screen 
@@ -32,7 +32,7 @@ export default function App() {
                 title:'Вход в личный кабинет',
                 headerTitleStyle:{...styles.headerTitle},
                 headerStyle: {
-                  backgroundColor: 'darkred'
+                  backgroundColor: '#bb0d02'
                 },
               }}
             />
@@ -47,7 +47,7 @@ export default function App() {
                 ),
                 headerLeft:()=>{},
                 headerStyle: {
-                  backgroundColor: 'darkred'
+                  backgroundColor: '#bb0d02'
                 },
               }}
             />
@@ -61,7 +61,7 @@ export default function App() {
                   <Username textStyle={{...styles.headerTitle}} viewStyle={{margin:15}} />
                 ),
                 headerStyle: {
-                  backgroundColor: 'darkred'
+                  backgroundColor: '#bb0d02'
                 },
               }}
             />

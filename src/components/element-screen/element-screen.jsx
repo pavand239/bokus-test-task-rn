@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         flexDirection:'column',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        backgroundColor: 'white'
     },
     buttonBlock:{
         flex:1,
@@ -51,16 +52,16 @@ const styles = StyleSheet.create({
         padding:11,
         flex:1,
         borderWidth:1,
-        borderColor:'red' 
+        borderColor:'darkred' 
     },
     backButtonText:{
-        color:'red',
+        color:'darkred',
         textAlign:'center'
     },
     logoutButton: {
         padding:12,
         flex:1,
-        backgroundColor:'red'
+        backgroundColor:'darkred'
     },
     logoutButtonText:{
         color:'white',

@@ -3,7 +3,8 @@ import DataServiceContext from "../data-service-context";
 import { useSelector } from "react-redux";
 import {
     View,
-    FlatList
+    FlatList,
+    StyleSheet
 } from "react-native";
 import ListItem from "../list-item";
 
@@ -16,7 +17,7 @@ export const ListScreen = ({navigation}) => {
     }
     let data = getItemList();
     return (
-        <View>
+        <View style={styles.container}>
             <FlatList
                 data={data}
                 renderItem = {
@@ -30,3 +31,11 @@ export const ListScreen = ({navigation}) => {
         </View>
     )
 }
+const styles = StyleSheet.create({
+    container: {
+      flexGrow:1 ,
+      justifyContent:'center',
+      paddingHorizontal:10,
+      backgroundColor:'white'
+    }
+});

@@ -5,9 +5,9 @@ export const FloatingLabelTextInput = ({label, value, ...props})=>{
     const [isFocused, setIsFocused] = useState(false);
     let labelStyle={
                 position:'absolute',
-                left:10,
+                left:20,
                 top:(isFocused || value !=='')?0:16,
-                fontSize:(isFocused || value !=='')?12:16,
+                fontSize:(isFocused || value !=='')?14:16,
                 color: '#aaa', 
             }
     

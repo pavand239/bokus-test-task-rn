@@ -76,7 +76,6 @@ export const LoginScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
       flexGrow:1 ,
-      backgroundColor: '#fff',
       justifyContent:'center',
       paddingHorizontal:10
     },
